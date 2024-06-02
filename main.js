@@ -1,52 +1,54 @@
-// Datos de ejemplo de productos
-const productos = [
-  {
-    id: 1,
-    nombre: "Producto 1",
-    precio: 19.99,
-    imagen: "https://via.placeholder.com/150",
-  },
-  {
-    id: 2,
-    nombre: "Producto 2",
-    precio: 24.99,
-    imagen: "https://via.placeholder.com/150",
-  },
-  {
-    id: 3,
-    nombre: "Producto 3",
-    precio: 14.99,
-    imagen: "https://via.placeholder.com/150",
-  },
-  // Agrega más productos aquí
-];
+async function getProducts() {
+  try {
+    const response = await fetch("http://127.0.0.1:8000/api/product/");
+    const products = await response.json();
+    console.log("Productos:", products);
+    return products;
+  } catch (error) {
+    console.error("Error al obtener los productos:", error);
+  }
+}
 
+async function getCategories() {
+  try {
+    const response = await fetch("http://127.0.0.1:8000/api/category/");
+    const categories = await response.json();
+    console.log("Categorías:", categories);
+    return categories;
+  } catch (error) {
+    console.error("Error al obtener las categorías:", error);
+  }
+}
 // Función para renderizar los productos
-function renderizarProductos() {
-  const productoContainer = document.querySelector(".producto-container");
-  productos.forEach((producto) => {
-    const productoDiv = document.createElement("div");
-    productoDiv.classList.add("col");
-    productoDiv.innerHTML = `
+async function renderProducts() {
+  const containerProduct = document.querySelector(".producto-container");
+
+  const products = await getProducts();
+
+  products.results.forEach((product) => {
+    const productDiv = document.createElement("div");
+    productDiv.classList.add("col");
+    productDiv.innerHTML = `
             <div class="card h-100">
-                <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                <img src="${product.url_image}" class="card-img-top" alt="${product.name}">
                 <div class="card-body">
-                    <h5 class="card-title">${producto.nombre}</h5>
-                    <p class="card-text">Precio: $${producto.precio}</p>
+                    <h5 class="card-title">${product.name}</h5>
+                    <p class="card-text">Precio: $${product.price}</p>
+                    <p class="card-text">Descuento: ${product.discount}</p>
                     <button class="btn btn-primary">Agregar al carrito</button>
                 </div>
             </div>
         `;
-    productoContainer.appendChild(productoDiv);
+    containerProduct.appendChild(productDiv);
   });
 }
 
 // Llamar a la función para renderizar los productos
-renderizarProductos();
+renderProducts();
 
 // Evento click en el botón "Ver Productos"
 const verProductosBtn = document.getElementById("verProductos");
 verProductosBtn.addEventListener("click", () => {
-  const productosSeccion = document.querySelector(".productos");
-  productosSeccion.scrollIntoView({ behavior: "smooth" });
+  const productsSection = document.querySelector(".productos");
+  productsSection.scrollIntoView({ behavior: "smooth" });
 });

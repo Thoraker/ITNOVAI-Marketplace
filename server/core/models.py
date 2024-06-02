@@ -27,7 +27,7 @@ class Product(models.Model):
     price = models.FloatField()
     discount = models.IntegerField(blank=True, null=True)
     category = models.ForeignKey(
-        Category, models.DO_NOTHING, db_column='category', blank=True, null=True)
+        Category, models.DO_NOTHING, db_column='category', related_name='products', blank=True, null=True)
 
     def __str__(self):
         return self.name
