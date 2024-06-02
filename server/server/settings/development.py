@@ -25,4 +25,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
+    'itnovai_test': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('ITNOVAI_DB_NAME'),
+        'USER': os.environ.get('ITNOVAI_DB_USER'),
+        'PASSWORD': os.environ.get('ITNOVAI_DB_PASSWORD'),
+        'HOST': os.environ.get('ITNOVAI_DB_HOST'),
+    }
 }
