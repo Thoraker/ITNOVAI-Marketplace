@@ -1,8 +1,10 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 async function getProducts() {
   try {
-    const response = await fetch("http://127.0.0.1:8000/api/product/");
+    const response = await fetch(API_URL + "/api/product/");
     const products = await response.json();
-    console.log("Productos:", products);
+    console.log(API_URL + "/api/product/");
     return products;
   } catch (error) {
     console.error("Error al obtener los productos:", error);
@@ -11,7 +13,7 @@ async function getProducts() {
 
 async function getCategories() {
   try {
-    const response = await fetch("http://127.0.0.1:8000/api/category/");
+    const response = await fetch(API_URL + "/api/category/");
     const categories = await response.json();
     console.log("Categorías:", categories);
     return categories;
