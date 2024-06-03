@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173'
+    'http://localhost:5173/', 'https://itnovai-marketplace.onrender.com/'
 ]
 
 # Password validation
