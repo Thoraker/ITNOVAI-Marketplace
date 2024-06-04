@@ -77,9 +77,37 @@
 
       <section class="productos py-5">
         <div class="container">
-          <h2 class="mb-4">Productos Destacados</h2>
-          <div class="row row-cols-1 row-cols-md-3 g-4 producto-container">
-            <!-- Los productos se renderizarán aquí -->
+          <div class="accordion category-container">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Productos Destacados
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div
+                    class="row row-cols-1 row-cols-md-3 g-4 producto-container"
+                  >
+                    <!-- Se renderizarán aquí todos los productos según paginación -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <!-- Se renderizarán aquí todos los productos según categorías -->
+            </div>
           </div>
         </div>
       </section>
