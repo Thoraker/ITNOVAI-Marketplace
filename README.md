@@ -69,6 +69,12 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 | :-------- | :------- | :----------------------------------------- |
 | `id`      | `string` | **Requerida**. Id de la categoria a llamar |
 
+#### Documentacion de la API
+
+```http
+  GET api/schema/swagger-ui
+```
+
 ## Autor
 
 - [@Thoraker](https://www.github.com/Thoraker)

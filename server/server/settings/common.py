@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     # 3rd party apps
     'rest_framework',
     'corsheaders',
-    'whitenoise.runserver_nostatic'
+    'whitenoise.runserver_nostatic',
+    'drf_spectacular'
 ]
 
 MIDDLEWARE = [
@@ -132,5 +133,14 @@ DATABASE_ROUTERS = ['core.routers.DatabaseRouter']
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 9,
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'ITNOVAI Marketplace API',
+    'DESCRIPTION': 'API para el marketplace ITNOVAI realizado como prueba técnica para la empresa',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
 }
