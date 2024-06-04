@@ -21,8 +21,10 @@ ITNOVAI MARKET es una aplicación web de comercio electrónico desarrollada a so
 5. Instala las dependencias del backend desde el archivo requirements.txt: `pip install -r requirements.txt`
 6. Configura las variables de entorno necesarias (como credenciales de la base de datos y claves de API)
 7. Inicia el servidor de desarrollo: `python manage.py runserver`
-8. Abre `http://localhost:3000` en tu navegador
+8. Inicia el desactivando el entorno virtual y ejecutando `npm run dev`
+9. Abre `http://localhost:5173` en tu navegador
 
+   
 ## Badges
 
 Add badges from somewhere like: [shields.io](https://shields.io/)
