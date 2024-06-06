@@ -1,0 +1,18 @@
+# ITNOVAI-MARKETPLACE
+SECRET_KEY=secret key
+
+# DATABASE
+USER_DB_NAME=User_DB_Name
+USER_DB_USER=DB_Name
+USER_DB_PASSWORD=Password
+USER_DB_HOST=DB_Host
+USER_DB_PORT=port
+
+# READ_ONLY DATABASE
+ITNOVAI_DB_NAME=itnovai_test
+ITNOVAI_DB_USER=itnovai_test
+ITNOVAI_DB_PASSWORD=itnovai_test
+ITNOVAI_DB_HOST=itnovai-test.czny55quvxhk.us-east-1.rds.amazonaws.com
+
+# Vite variables
+VITE_API_URL=http://127.0.0.1:8000
